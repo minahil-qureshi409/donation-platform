@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U Devs | Donation Platform</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-light">
+
+    <!-- Top Navigation (Mobile Toggle & Branding) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary d-md-none sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">U Devs Charity</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            <!-- 4.1 SIDEBAR NAVIGATION -->
+            <!-- Desktop Sidebar (col-md-3) & Mobile Offcanvas -->
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse offcanvas-md offcanvas-start">
+                <div class="position-sticky pt-3 d-flex flex-column h-100">
+                    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none px-3 d-none d-md-flex">
+                        <span class="fs-4 fw-bold text-primary"><i class="fas fa-hand-holding-heart me-2"></i>U Devs</span>
+                    </a>
+                    <hr class="d-none d-md-block">
+                    <ul class="nav flex-column mb-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" aria-current="page">
+                                <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#causes-section" class="nav-link link-dark">
+                                <i class="fas fa-ribbon me-2"></i> Donation Causes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#needy-section" class="nav-link link-dark">
+                                <i class="fas fa-users me-2"></i> Needy Contacts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#givers-section" class="nav-link link-dark">
+                                <i class="fas fa-hand-holding-usd me-2"></i> Donation Givers
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link link-dark">
+                                <i class="fas fa-chart-bar me-2"></i> Reports
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown px-3 pb-3">
+                        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://ui-avatars.com/api/?name=Admin+User&background=0D8ABC&color=fff" alt="" width="32" height="32" class="rounded-circle me-2">
+                            <strong>Admin</strong>
+                        </a>
+                        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- MAIN CONTENT AREA -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                
+                <!-- 6. BONUS: Dashboard Stats & Search -->
+                <div class="row g-3 mb-4">
+                    <div class="col-12 col-md-6">
+                        <h2 class="h3 border-start border-primary border-5 ps-3">Dashboard Overview</h2>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search causes or contacts...">
+                            <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="row mb-5 g-3">
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm p-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="text-muted mb-0">Total Raised</p>
+                                    <h3 class="fw-bold text-success">$45,200</h3>
+                                </div>
+                                <div class="bg-success bg-opacity-10 p-3 rounded-circle text-success">
+                                    <i class="fas fa-dollar-sign fa-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm p-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="text-muted mb-0">Active Causes</p>
+                                    <h3 class="fw-bold text-primary">12</h3>
+                                </div>
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-circle text-primary">
+                                    <i class="fas fa-flag fa-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm p-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="text-muted mb-0">Donors</p>
+                                    <h3 class="fw-bold text-warning">340</h3>
+                                </div>
+                                <div class="bg-warning bg-opacity-10 p-3 rounded-circle text-warning">
+                                    <i class="fas fa-users fa-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.1 DONATION LISTING SECTION -->
+                <section id="causes-section" class="mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4>Urgent Causes</h4>
+                        <!-- Bonus: Filter -->
+                        <select class="form-select w-auto">
+                            <option selected>All Categories</option>
+                            <option value="1">Medical</option>
+                            <option value="2">Education</option>
+                        </select>
+                    </div>
+
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        <!-- Card 1 -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm hover-card">
+                                <span class="position-absolute top-0 end-0 badge bg-danger m-2">Urgent</span>
+                                <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&q=80&w=400" class="card-img-top" alt="Cause Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Emergency Surgery for John</h5>
+                                    <span class="badge bg-info text-dark mb-2">Medical</span>
+                                    <p class="card-text text-muted small">John requires urgent heart surgery. Help us save a life today.</p>
+                                    
+                                    <div class="d-flex justify-content-between small fw-bold mb-1">
+                                        <span>$3,500 Raised</span>
+                                        <span>Goal: $5,000</span>
+                                    </div>
+                                    <div class="progress mb-3" style="height: 10px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    
+                                    <button type="button" class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#donationModal">
+                                        Donate Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm hover-card">
+                                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=400" class="card-img-top" alt="Cause Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Education for Rural Kids</h5>
+                                    <span class="badge bg-warning text-dark mb-2">Education</span>
+                                    <p class="card-text text-muted small">Providing books and uniforms for 50 children in rural areas.</p>
+                                    
+                                    <div class="d-flex justify-content-between small fw-bold mb-1">
+                                        <span>$1,200 Raised</span>
+                                        <span>Goal: $3,000</span>
+                                    </div>
+                                    <div class="progress mb-3" style="height: 10px;">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    
+                                    <button type="button" class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#donationModal">
+                                        Donate Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm hover-card">
+                                <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=400" class="card-img-top" alt="Cause Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Food Relief Program</h5>
+                                    <span class="badge bg-success mb-2">Emergency</span>
+                                    <p class="card-text text-muted small">Weekly food distribution for homeless individuals in the city.</p>
+                                    
+                                    <div class="d-flex justify-content-between small fw-bold mb-1">
+                                        <span>$8,000 Raised</span>
+                                        <span>Goal: $10,000</span>
+                                    </div>
+                                    <div class="progress mb-3" style="height: 10px;">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    
+                                    <button type="button" class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#donationModal">
+                                        Donate Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3.3 NEEDY CONTACTS SECTION -->
+                <section id="needy-section" class="mb-5 bg-white p-4 rounded shadow-sm border">
+                    <h4 class="mb-4">Verified Needy Contacts</h4>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>City</th>
+                                    <th>Contact</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-sm bg-secondary text-white rounded-circle me-2 d-flex justify-content-center align-items-center" style="width:35px; height:35px">JS</div>
+                                            <div>
+                                                <p class="mb-0 fw-bold">John Smith</p>
+                                                <small class="text-muted">ID: #4421</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Medical</td>
+                                    <td>New York</td>
+                                    <td>+1 234 *** **89</td>
+                                    <td><span class="badge bg-success"><i class="fas fa-check-circle"></i> Verified</span></td>
+                                    <td><button class="btn btn-sm btn-light">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-sm bg-secondary text-white rounded-circle me-2 d-flex justify-content-center align-items-center" style="width:35px; height:35px">AD</div>
+                                            <div>
+                                                <p class="mb-0 fw-bold">Alice Doe</p>
+                                                <small class="text-muted">ID: #4422</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Education</td>
+                                    <td>Chicago</td>
+                                    <td>+1 987 *** **21</td>
+                                    <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                    <td><button class="btn btn-sm btn-light">View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- 3.4 DONATION GIVERS SECTION -->
+                <section id="givers-section" class="mb-5">
+                    <h4 class="mb-4">Recent Donations</h4>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-striped mb-0">
+                                    <thead class="bg-primary text-white">
+                                        <tr>
+                                            <th>Donor Name</th>
+                                            <th>Amount</th>
+                                            <th>Type</th>
+                                            <th>Date</th>
+                                            <th>Message</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Michael B.</td>
+                                            <td class="fw-bold text-success">$500.00</td>
+                                            <td>One-time</td>
+                                            <td>Oct 24, 2023</td>
+                                            <td class="text-muted fst-italic">"Keep up the good work!"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sarah Connor</td>
+                                            <td class="fw-bold text-success">$50.00</td>
+                                            <td>Monthly</td>
+                                            <td>Oct 23, 2023</td>
+                                            <td class="text-muted">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Anonymous</td>
+                                            <td class="fw-bold text-success">$1,000.00</td>
+                                            <td>One-time</td>
+                                            <td>Oct 22, 2023</td>
+                                            <td class="text-muted fst-italic">"For the children."</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4.2 FOOTER SECTION -->
+                <footer class="bg-dark text-white pt-5 pb-3 mt-5 rounded-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <h5 class="text-primary fw-bold">U Devs</h5>
+                                <p class="small text-white-50">Connecting donors with those in need through transparency and trust. Join our mission today.</p>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <h5>Quick Links</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="text-white-50 text-decoration-none">Dashboard</a></li>
+                                    <li><a href="#" class="text-white-50 text-decoration-none">Our Causes</a></li>
+                                    <li><a href="#" class="text-white-50 text-decoration-none">Become a Volunteer</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <h5>Contact Us</h5>
+                                <p class="small text-white-50 mb-1"><i class="fas fa-envelope me-2"></i> help@udevs-charity.com</p>
+                                <p class="small text-white-50"><i class="fas fa-phone me-2"></i> +1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <hr class="border-secondary">
+                        <div class="text-center small text-white-50">
+                            &copy; 2023 U Devs Donation Platform. All Rights Reserved.
+                        </div>
+                    </div>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- 3.2 DONATION DETAILS MODAL -->
+    <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="donationModalLabel">Cause Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&q=80&w=400" class="img-fluid rounded mb-3" alt="Detail Image">
+                            <div class="card bg-light border-0">
+                                <div class="card-body">
+                                    <h6 class="fw-bold">Organizer</h6>
+                                    <p class="mb-1 small">Hope Foundation</p>
+                                    <p class="mb-0 small text-success"><i class="fas fa-check-circle"></i> Verified Org</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h4 class="fw-bold">Emergency Surgery for John</h4>
+                            <span class="badge bg-danger mb-3">High Urgency</span>
+                            <span class="badge bg-info text-dark mb-3">Medical</span>
+                            
+                            <p class="text-muted">
+                                John (Age 45) has been diagnosed with a severe heart condition. He needs immediate surgery at St. Mary's Hospital. The family has exhausted their savings and needs community support to cover the operation costs.
+                            </p>
+                            
+                            <h6 class="fw-bold mt-4">Donation Instructions</h6>
+                            <ul class="small text-muted">
+                                <li>All payments are processed securely.</li>
+                                <li>You can donate anonymously.</li>
+                                <li>Tax receipt will be emailed immediately.</li>
+                            </ul>
+
+                            <hr>
+                            
+                            <form>
+                                <label class="form-label fw-bold">Select Amount</label>
+                                <div class="d-flex gap-2 mb-3">
+                                    <button type="button" class="btn btn-outline-primary flex-fill">$10</button>
+                                    <button type="button" class="btn btn-outline-primary flex-fill active">$50</button>
+                                    <button type="button" class="btn btn-outline-primary flex-fill">$100</button>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" placeholder="Custom Amount">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success btn-lg px-4">Confirm Donation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Optional: Tooltip Initialization -->
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+</body>
+</html>
